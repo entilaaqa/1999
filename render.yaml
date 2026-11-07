@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: entilaaqa
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: POSTGRES_URL
+        sync: false
+      - key: ADMIN_EMAILS
+        sync: false
+      - key: TEAM_EMAILS
+        sync: false
